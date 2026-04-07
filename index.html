@@ -3,21 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varela - Informática & Redes</title>
+    <title>Varela - Suporte em Informática</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
-        body { background-color: #0d1117; color: white; text-align: center; padding: 50px; }
-        .card { background: #161b22; border: 1px solid #30363d; padding: 30px; border-radius: 10px; max-width: 500px; margin: auto; }
-        h1 { color: #58a6ff; margin-bottom: 20px; }
-        .btn { display: inline-block; background: #238636; color: white; padding: 15px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 20px; }
-    </style>
-</head>
-<body>
-    <div class="card">
-        <h1>Varela - Informática</h1>
-        <p>Suporte Técnico, Redes e Manutenção</p>
-        <p>São Paulo/SP</p>
-        <a href="https://wa.me/551193415423" class="btn">CHAMAR NO WHATSAPP</a>
-    </div>
-</body>
-</html>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #00ff87;
+            --bg: #050a10;
+            --card-bg: rgba(22, 27, 34, 0.8);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; }
+        
+        body { background-color: var(--bg); color: white; overflow-x: hidden; }
+
+        /* Cabeçalho Minimalista */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(5, 10, 16, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        .nav-links a { color: #8b949e; text-decoration: none; margin-left: 2rem; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; }
+
+        /* Seção Hero (Banner Principal) */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 10% 80%, rgba(0, 255, 135, 0.1) 0%, transparent 40%);
+        }
+
+        .hero-content { max-width: 600px; }
+        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-content h1 span { background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { color: #8b949e; font-size: 1.2rem; margin-bottom: 2rem; }
+
+        /* Cards Estilo Veeam/Penso */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 5rem 10%;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(255,255,255
